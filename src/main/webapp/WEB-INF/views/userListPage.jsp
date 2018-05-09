@@ -40,7 +40,7 @@
 						<i class="ti-plus"></i> 查询
 					</button>
 					<button class="btn btn-primary navbar-btn" type="reset">
-						<i class="ti-plus">清空
+						<i class="ti-plus"></i> 清空
 					</button>
 				</div>
 			</form>
@@ -86,6 +86,7 @@
 				sortName : 'id',
 				sidePagination : 'server',
 				sortOrder : 'desc',
+				striped : true,
 				sortStable : true,
 				idField : 'id',
 				queryParamsType : 'undefined',

@@ -1,8 +1,9 @@
 package com.cxq.springweb.web;
 
-		import java.util.List;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,9 @@ import com.cxq.springweb.service.UserService;
 @Controller
 @RequestMapping(value = "web")
 public class WebController {
+	
+	@Value("${com.title}")
+	private String title;
 
 	@Autowired
 	private UserService userService;
@@ -33,9 +37,9 @@ public class WebController {
 	@RequestMapping(value = "/index2", method = RequestMethod.GET)
 	@ResponseBody
 	public String toIndex2() {
-		return "hello world";
+		return "主题为： " + title;
 	}
-
+	
 	@RequestMapping(value = "/userList", method = RequestMethod.GET)
 	public String toUserList(Model model) {
 		model.addAttribute("userList", userService.getUserList());

@@ -33,7 +33,7 @@ public class JdbcDaoImpl implements JdbcDao {
 //			}
 //		}).get(0);
 		
-		List<User> list = new ArrayList<User>();
+		final List<User> list = new ArrayList<User>();
 		jdbcTemplate.query(sql, new Object[] { name }, new RowCallbackHandler() {
 			
 			@Override
