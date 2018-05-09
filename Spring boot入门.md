@@ -632,6 +632,42 @@ public class SpringWebApplication extends SpringBootServletInitializer{
 
 ---
 
+### 业务类常用工具类
+
+基本上常用的工具类不是apache的就是google的。有兴趣可以多多学习使用工具类，提高开发效率
+
+```xml
+<!-- FileUtils、 IOUtils、 FilenameUtils -->
+<dependency>
+	<groupId>commons-io</groupId>
+  	<artifactId>commons-io</artifactId>
+  	<version>2.5</version>
+</dependency>
+
+<!-- StringUtils -->
+<dependency>
+	<groupId>commons-lang</groupId>
+  	<artifactId>commons-lang</artifactId>
+  	<version>2.6</version>
+</dependency>
+
+<!-- google提供的Collections功能 -->
+<dependency>
+	<groupId>com.google.guava</groupId>
+  	<artifactId>guava</artifactId>
+  	<version>21.0</version>
+</dependency>
+
+<!-- lombok注解，也就是实体中用到的减少代码量的注解 -->
+<dependency>
+	<groupId>org.projectlombok</groupId>
+  	<artifactId>lombok</artifactId>
+  	<version>1.16.10</version>
+</dependency>
+```
+
+
+
 ### 开发环境的调试
 
 热启动在正常开发项目中已经很常见了吧，虽然平时开发web项目过程中，改动项目启重启总是报错；但springBoot对调试支持很好，修改之后可以实时生效，需要添加以下的配置：

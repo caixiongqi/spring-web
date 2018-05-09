@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cxq.springweb.bean.User;
 
 /**
- * 前后端交互两种方式：1.跳转页面，如form表单提交；2.restful接口，ajax提交
+ * 前后端交互两种方式：1.跳转页面，如form表单提交；2.restful接口，如ajax提交
  *
  */
 @Controller

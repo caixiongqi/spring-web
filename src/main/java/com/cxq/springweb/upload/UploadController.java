@@ -15,12 +15,21 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping(value = "upload")
 public class UploadController {
 	
-	
+	/**
+	 * 跳转到上传文件页面
+	 * @return 跳转的页面路径
+	 */
 	@RequestMapping(value = "/toUpload")
 	public String toUploadPage() {
 		return "upload/upload";
 	}
 	
+	/**
+	 * 上传文件提交
+	 * @param file 提交的文件
+	 * @return 文件的大小
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/file")
 	@ResponseBody
 	public String upload(@RequestParam MultipartFile file) throws IOException {
