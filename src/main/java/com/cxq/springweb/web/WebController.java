@@ -40,24 +40,44 @@ public class WebController {
 		return "主题为： " + title;
 	}
 	
+	
+	/**
+	 * 跳转到用户集合页面
+	 * @param model 用于向前端传送数据的model
+	 * @return 用户集合页面路径
+	 */
 	@RequestMapping(value = "/userList", method = RequestMethod.GET)
 	public String toUserList(Model model) {
 		model.addAttribute("userList", userService.getUserList());
 		return "userList";
 	}
 
+	/**
+	 * 获取用户集合（ajax方式）
+	 * @return  用户集合
+	 */
 	@RequestMapping(value = "/getUserList", method = RequestMethod.GET)
 	@ResponseBody
 	public List<User> toUserList() {
 		return userService.getUserList();
 	}
 
+	/**
+	 * 获取用户分页数据
+	 * @param pageQueryParam 接收到的分页信息
+	 * @param user 用户信息，条件查询
+	 * @return 分页数据
+	 */
 	@RequestMapping(value = "/pageUserList", method = RequestMethod.GET)
 	@ResponseBody
 	public JsonResult getUserListPage(PageQueryParam pageQueryParam, User user) {
 		return userService.getUserListPage(pageQueryParam, user);
 	}
 
+	/**
+	 * 跳转到用户分页界面
+	 * @return
+	 */
 	@RequestMapping(value = "/userPage")
 	public String toUserPage() {
 		return "userListPage";
